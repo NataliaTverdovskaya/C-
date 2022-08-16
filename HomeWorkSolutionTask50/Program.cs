@@ -47,7 +47,7 @@ void PrintColorTwoDimArray(int[,] array)
         for (int j = 0; j < array.GetLength(1); j++)
         {
             Console.ForegroundColor = col[new System.Random().Next(0, 16)];
-            Console.Write(array[i, j] + " ");
+            Console.Write(array[i, j] + "\t");
             Console.ResetColor();
         }
         Console.WriteLine();
@@ -56,7 +56,7 @@ void PrintColorTwoDimArray(int[,] array)
 
 void PrintAnswer (int[,] inputArray, int row, int column)
 {
-    if (inputArray[row,column] == null)
+    if (row > inputArray.GetLength(0)-1 || column > inputArray.GetLength(1)-1)
     {
         Console.WriteLine ("Значения с таким индексом не существует");
     }
